@@ -1,0 +1,10 @@
+Title
+	Designing and integration of a low-cost Petri dish dispenser for a variety of dish sizes.
+
+Problem formulation
+	Petri dishes are widely used to i.e. conduct chemical experiments, as they offer a low-cost, simple and chemical neutral vessel. But many of the current laboratory machines that work with Petri dishes are unable to insert clean Petri dishes if these are of different sizes. The few that actually are able to handle different sizes are either very costly or aimed for laboratory machines used in high throughput setups. This eliminates the possibility for less intensive and low-budget setups to benefit from using different sizes of Petri dishes in experiments unless several Petri dish inserters are acquired.
+
+Method
+	Investigate the currently available Petri dispensers to identify their strengths and weaknesses.
+	Using this as a starting point, a design will iteratively be created, tested and improved to end up with a low-cost mechanism. This may be done by using technologies like 3D printing, laser cutting or similar, while adding sensors and actuators to provide correct feedback and manipulation of the designed parts.
+	In order to support easy integration of the design, this project will also include a fair amount of focus on the software. This includes software taking part in the chain of layers all the way from directly controlling the hardware components to the API used in the UI.

@@ -1,0 +1,408 @@
+\documentclass{sigchi}
+
+% Use this command to override the default ACM copyright statement (e.g. for preprints). 
+% Consult the conference website for the camera-ready copyright statement.
+
+
+%% EXAMPLE BEGIN -- HOW TO OVERRIDE THE DEFAULT COPYRIGHT STRIP -- (July 22, 2013 - Paul Baumann)
+% \toappear{Permission to make digital or hard copies of all or part of this work for personal or classroom use is 	granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org. \\
+% {\emph{CHI'14}}, April 26--May 1, 2014, Toronto, Canada. \\
+% Copyright \copyright~2014 ACM ISBN/14/04...\$15.00. \\
+% DOI string from ACM form confirmation}
+%% EXAMPLE END -- HOW TO OVERRIDE THE DEFAULT COPYRIGHT STRIP -- (July 22, 2013 - Paul Baumann)
+
+
+% Arabic page numbers for submission. 
+% Remove this line to eliminate page numbers for the camera ready copy
+% \pagenumbering{arabic}
+
+
+% Load basic packages
+\usepackage{balance}  % to better equalize the last page
+\usepackage{graphics} % for EPS, load graphicx instead
+\usepackage{times}    % comment if you want LaTeX's default font
+\usepackage{url}      % llt: nicely formatted URLs
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+%\usepackage{tabulary}
+%\usepackage{amsmath}
+\usepackage{array}
+
+
+% llt: Define a global style for URLs, rather that the default one
+\makeatletter
+\def\url@leostyle{%
+	\@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\bf\ttfamily}}}
+\makeatother
+\urlstyle{leo}
+
+
+% To make various LaTeX processors do the right thing with page size.
+\def\pprw{8.5in}
+\def\pprh{11in}
+\special{papersize=\pprw,\pprh}
+\setlength{\paperwidth}{\pprw}
+\setlength{\paperheight}{\pprh}
+\setlength{\pdfpagewidth}{\pprw}
+\setlength{\pdfpageheight}{\pprh}
+
+% Make sure hyperref comes last of your loaded packages, 
+% to give it a fighting chance of not being over-written, 
+% since its job is to redefine many LaTeX commands.
+\usepackage[pdftex]{hyperref}
+\hypersetup{
+	pdftitle={SIGCHI Conference Proceedings Format},
+	pdfauthor={LaTeX},
+	pdfkeywords={SIGCHI, proceedings, archival format},
+	bookmarksnumbered,
+	pdfstartview={FitH},
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black,
+	breaklinks=true,
+}
+
+% create a shortcut to typeset table headings
+\newcommand\tabhead[1]{\small\textbf{#1}}
+
+\definecolor{Orange}{rgb}{1,0.5,0}
+\newcommand{\todo}[1]{\textsf{\textbf{\textcolor{Orange}{[[#1]]}}}}
+
+\toappear{Paper submitted for evaluation in an elective project, spring 2016. The IT University of Copenhagen. Copyright remains with the author.}
+
+% End of preamble. Here it comes the document.
+\begin{document}
+	
+	\title{Towards the modular liquid-handling platform}
+	
+	\numberofauthors{1}
+	\author{
+		\alignauthor Lars Yndal Sørensen\\
+		\affaddr{MSc. Stud., IT University of Copenhagen}\\
+		\affaddr{Rued Langgaards Vej 7, 2300 Cph S}\\
+		\email{lynd@itu.dk}\\
+		%\affaddr{Optional phone number}
+	}
+	
+	\maketitle
+	
+	\begin{abstract}
+		TBD
+		
+		diskutere dem ud 
+		fra kriterier som performance, kompleksistet/pris, vedligehold, udvidbarhed,
+		osv. Derefter vender du rundt og kigger på hvad for en type applikation 
+		du kigger på og ser derefter hvad for en type der så passer bedst.
+		
+		Hvis der ikke i litteraturen findes eksempler på alle mulige typer er det
+		ikke et problem snarere er det godt fordi der kunne være et hul der
+		var værd at efterforske.
+		
+		Questions:\\
+			\todo{1) Correct term: Dish dispenser, plate dispenser, similar...?}\\
+			\todo{2) General term: Dishes or plates? (Must include both Petri dishes and wells.)}\\
+			\todo{3) Write "I propose, or we propose...")}\\
+			\todo{4) laboratory platform vs liguid-handling machine}\\
+			\todo{5) Use term "experiment container" in instriduction to have as open approach as possible?}\\
+			\todo{Mention: Not high performance design (?)}
+			
+	\end{abstract}
+	
+	\keywords{
+		Guides; instructions; author's kit; conference publications;
+		keywords should be separated by a semi-colon. \newline
+%		\textcolor{red}{Optional section to be included in your final version, 
+%			but strongly encouraged.}
+	}
+	
+\category{H.5.m.}{Information Interfaces and Presentation (e.g. HCI)}{Miscellaneous}
+	
+	See: \url{http://www.acm.org/about/class/1998/}
+	for more information and the full list of ACM classifiers
+	and descriptors. \newline
+%	\textcolor{red}{Optional section to be included in your final version, 
+%		but strongly encouraged. On the submission page only the classifiers’ 
+%		letter-number combination will need to be entered.}
+	
+	\section{Introduction}
+	A lot of public and private institutions are working with laboratory platform to perform experiments in Petri dishes or wells. These experiments are often related to human health or other biological research, while each series of these experiments can be performed in a single type of dish. This has entailed that the available laboratory platforms mainly focus on to servo \textit{one} type of dishes and that the platforms are designed for a single type of experiments. 
+	
+	In the design process, the knowledge of having to address just a certain type of experiments, makes it more rigid, what such a platform requires of equipment. Therefore each platform are very often designed in a non-modular way as each piece of equipment seeks to address as many functionalities as possible.
+	
+	Public and private institutions that use laboratory platforms may, for several reasons, not be interested in platforms that aim at specific experiments. Reasons that are related to financial circumstances, or because they just need to perform a limited serie of experiments, before turning to a completely different type of experiments. This rules out the use of available laboratory platforms, in which case, some institutions are creating their own platforms to address their specific needs.
+	
+	If the laboratory platforms where less rigid in their design, in terms of modularity, and they used more generic approach, they would be able to perform experiments in \textit{a group} of types and address more needs per platform. Of course the specialized platforms would still be needed as some experiments simply can be generalized, but starting with, i.e. a module for adding and removing Petri dishes and wells, would benefit the majority, as this is the most common event on a laboratory platform.
+	
+	This paper will from this point on, focus on the design of a module that can insert and remove experiment containers, describing the everything from the initial design goals, through  the mechanical and software design, to the evaluation containing an integrated experiment into an laboratory platform\footnote{The platform being integrated into during the evaluating experiments is currently still being designed, but is far enough the process that actual experiments are being conducted on this.}.
+	
+	
+	
+	
+	
+%	Institutions that work with laboratory platforms, are often working with their own custom designed ones or have chosen to acquire one from a private company.
+%	
+%	Many of the platforms that are available are highly specialized and can therefore not handle more than a single type of dishes or wells. For those that come with a dish insertion/removal functionality, the end manipulator for handling the dishes are deeply integrated to the rest of the platform. This forces to users to acquire the platform as \textit{one} single unit instead of a modular design, that would address the users needs with a higher granularity.
+%	
+%	
+%	
+%	
+%	
+%	For most laboratory platforms that include a \todo{Petri dish or well square} end manipulation, the end manipulator is deeply integrated into the rest of the platform. Some times the manipulator may serves multiple purposes\todo{reference}, such as moving \todo{samples} between local stations, inserting \todo{dishes} into the platform from a nearby stack or even change header to act as i.e. syringes.\todo{reference}\\
+%	
+%	Since the 
+%	
+%	
+%	Even though the manipulator, that handles the dishes, are so integrated into the rest of the platform, Since the laboratory platform are very specialized to handle only a certain type of plates, it makes it becomes  mainly are build to handle only one type of dish, it makes it eve
+%	Something about not being able to handle different shapes of dishes
+%	
+%	Laboratory equipment that includes such functionality are often designed to address an industrial standard and will therefore also aim at a high through-put of samples. This severely limits the small users, because the price follows the mentioned functionality and standard.
+%	
+%	Because the platforms with dish insertion functionality have the deeply integration to the rest of the platform, an institution with a modest budget, or that handles multiple variations of dishes, will not even be able to start by acquiring just some modules and later upgrade with some other modules.
+	
+	 
+	 
+	
+
+	
+	
+	
+	
+	
+	
+	
+	%The current vessel manipulators are often designed to handle only one specific vessel type - types like Petri dishes or wells (Correct term?). They are also designed towards a high throughput at an industrial level. 
+	
+	
+	
+	
+%	Buy addressing the mentioned problems, less privileged institutions and institutions with special needs will be able to benefit from the proposed dispenser.
+	
+	
+	\section{Design goals}
+	In order to increase the design and clarify the important functionalities needed, a series of user scenarios will be described. The concrete design goals will be extracted from these and kept in mind through-out the design process, and be used to evaluate the proposed system at the end.
+	
+	\subsection{User scenarios}
+	
+	\begin{enumerate}
+		\item \textbf{Adding dispenser module to a platform}\\
+		If a user has a laboratory platform and wants to increase the automation, she can easily integrate the dispenser with only a minor modifications.
+		
+		\item \textbf{Different types of plates}\\
+		To broaden the possible of the dispenser module, it must be able to handle different types of plates. The type of plates that are being handled, must be implicit chosen by the user or completely handled by the module.
+		
+		\item \textbf{Adding/removing dish stacks}\\
+		While a platform and the dispenser is running, it must be straight forward to add and remove stacks of dishes. The user shall not have to be concerned of the state of the dispenser, as the dispenser must adapt to the user's actions in runtime.
+		
+		\item \textbf{Breakage}\\
+		The module may of natural cause be worn and parts may break. When this happens, the parts must be easy and low-lost to replace.
+		
+	\end{enumerate}
+	
+	\subsection{Goals}
+%	1 - Adding the dispenser after having acquired the lab robot - modular\\
+%	2 - Flexible way to add/remove stacks of Petri dished\\
+%	Must be easy to access for the user\\
+%	Let the user know which stack that may be removed and which are currently being used\\
+%	3 - Must address not only one size of Petri dished, but several sized and even wells to support for different experiments \\
+%	4 - A part breaks and needs to be replaced\\
+	
+	%Note: Remember to include software design goals in these!
+	%Udgangspunkt i olie-dråbe-eksperimenter  - og andre
+	
+	\begin{itemize}
+		\item \textbf{Modularity} Able to attach/remove the dispenser module without any hassle
+		\item \textbf{Versatility }
+		\item \textbf{Usability} 	Easy to add/remove stacks of Petri dishes/wells\\
+		Detects the platform layers automatically\\
+		\item \textbf{Flexibility} Address different sizes of Petri dishes (including wells)
+		\item \textbf{Repairability} Easy to create spare parts (low cost)
+		
+		%Gerne flere kategorier
+			
+		%Evt simplicitet
+		%kontra high performance
+	\end{itemize}
+	
+	
+	\section{Mechanical design}
+	As the proposed module shall be available to the largest amount of people, the design is based on open-source and non-specialized parts\footnote{The open-source parts are available around the world, but can be watched at \url{www.openbuildspartstore.com} and \url{www.pjrc.com/teensy}, which include the blueprints.}. The choice of using open-source parts is too allow the user to either produce them by himself or acquire them elsewhere for a low cost. 
+	
+	To provide the reader with a better overview, the rest of this section will be divided into smaller sections, that each will describe one main part of the design, i.e. layer detection, the gripper and the dish containers. This description will include an iterative approach of improving each part. At the end, will be mentioned misc. small, but important design decisions.
+	
+	
+	
+	TBD
+	
+	Lægge vægt på at det er "normale" motorer
+	Reference til GitHub
+	
+	
+	Overvejelser  omkring fingre: 
+		2 * 2: Udligne forskel ved greb
+			Virker ikke da skæve brønde, kan bebeholde vinkel
+		
+		Istedet fikserede greb: 3 stk
+			
+			
+	
+	
+	\subsection{Gripping functionality}
+	current product from industrial providers have gone for a squeezing approach
+	Considered to add a small base to each dish as this would provide a distance between each dish, where a fork-shaped figure could go in an lift the base + dish. 
+		Rejected the idea because of the extra use of materials and the base would either had to be glued together (cut two pieces and glue these together to have a hole in the lower part which is a bit smaller than the dish) or when cutting the parts, the area could be engraved heavily to remove the upper half of the base
+	
+	Detecting the distance to respectively the dishes, layers and platform (refer to other sections): 
+		Using US sensor
+			No physical contact (good!!)
+		IR sensor with filter 
+			Risk of getting to close (dishes/plates are often made of \textit{transparent} glass/plastic)
+		Lever switch
+			Physical contact for sure
+			
+		The detection of the different object should be done as close to the dispenser module, but with enough distance so the  module itself won't be in risk of adding false measurements.		
+	
+	
+	
+		To create enough friction between the gripper and the dish, ideas of two semi-flexible U shaped figured was consider, but rejected as these might lift i.e. a plate of wells in an angled position - see figure xxx (provide a figure for this).
+		
+		Another idea was to have a total of three "fingers", but where all of these were fixed, and therefore move the dish into a correct centered position before starting the lift. (See figure xxx)
+		
+		
+		
+		As an initial test the gripper will be designed to carry several of the mentioned measuring equipments even though their functionality will address some of the same issues. In later iterations these least successful will be removed.
+		
+	
+	\subsection{Layer detection}
+		Endstop which can move up and down => layer is at center/top of the "active" period
+		
+		UltraSonic sensor at end of gripper (could be used for detecting dishes too)
+		
+		Hall sensor => same principal, but layer is where the value is the highest
+			(Can be mounted at the inside of the plastic at the nearest horizontal layer)
+	
+			
+			
+	\subsection{Dish containers}	
+		Room for electronics in the bottom (and protected from liquids from above)
+		Angled side + angled cuts to help align dishes that are removed from the platform
+		Distance sensors on the top
+	
+	
+	\subsection{Misc. design decisions}
+	
+	\section{Software design}
+	TBD
+	
+	Using a Teensy LC/Teensy 3.2 because of low cost and can perform at high frequencies
+	Going for single threaded for starters.
+	
+	Aware of the limited space, which is why the system will take in a command and store this, but only in the last second transform a command into several sequential motions (figure?)
+	
+	
+	
+	
+	Created a queue for commands to be executed
+		The commands can then be transferred from the host system to the dispenser to leave the dispenser less independent and the host doesn't have to store upcoming commands.
+		This will make it easier to check upcoming motions and see if these can be executed simultaneously
+
+		An OK is returned upon every successfully executed command
+		
+		
+	
+	
+	Each command line is ended with a semicolon.
+	\begin{table}
+	\begin{center}
+	 \begin{tabular}{|| c | p{5cm} ||} 
+	 \hline
+	 Command & Description\\ [0.5ex] 
+	 \hline\hline
+	 d\textless stack number\textgreater  & dispense a dish/plate from stack \textless stack number\textgreater  \\ 
+	 \hline
+	 r\textless stack number\textgreater & remove dish/plate form platform and put it in stack \textless stack number\textgreater \\
+	 \hline
+	 c & calibrate \\
+	 \hline
+	 o & move to origo \\
+	 \hline
+	 l & get layer positions in mm \\
+	 \hline
+	 w & get width in mm \\
+	 \hline
+	 h & get travel height in mm \\ %What we don't know the height of the "bottom" \\
+	 \hline
+	 p & get current position in mm - format: (\textless width\textgreater ,\textless height\textgreater ) \\
+	 \hline
+	 s & get amount of dishes in stacks - format: Int array width dish amount for each stack. -1 if no stack in place\\ [1ex] 
+	 \hline
+	\end{tabular}
+	\end{center}
+	\caption{Available commands and descriptions.} \label{table:commands}
+	\end{table}	
+
+	\section{Testing}
+	\subsection{Mechanical precision}
+	TBD
+	Uddybe hvad en reelt præcision er
+	
+	
+	\subsection{Software testing}
+	Different Teensies compared to amount of incoming data?
+	
+	\subsection{Integrated experiment}
+	TBD
+	
+	\section{Discussion}
+	TBD
+	Skal være en mere konceptuel diskussion (relatere til design goals)
+	
+	\section{Conclusion}
+	It is important that you write for the SIGCHI audience.  Please read
+	previous years' Proceedings to understand the writing style and
+	conventions that successful authors have used.  It is particularly
+	important that you state clearly what you have done, not merely what
+	you plan to do, and explain how your work is different from previously
+	published work, i.e., what is the unique contribution that your work
+	makes to the field?  Please consider what the reader will learn from
+	your submission, and how they will find your work useful.  If you
+	write with these questions in mind, your work is more likely to be
+	successful, both in being accepted into the Conference, and in
+	influencing the work of our field.
+	
+	\section{Acknowledgements}
+	The author would like to thank primarily Kasper Støy and Andrés Faina for supervising this project, but also PITLab for providing temporarily sensors.
+	%Jørn?
+	
+	
+	% Balancing columns in a ref list is a bit of a pain because you
+	% either use a hack like flushend or balance, or manually insert
+	% a column break.  http://www.tex.ac.uk/cgi-bin/texfaq2html?label=balance
+	% multicols doesn't work because we're already in two-column mode,
+	% and flushend isn't awesome, so I choose balance.  See this
+	% for more info: http://cs.brown.edu/system/software/latex/doc/balance.pdf
+	%
+	% Note that in a perfect world balance wants to be in the first
+	% column of the last page.
+	%
+	% If balance doesn't work for you, you can remove that and
+	% hard-code a column break into the bbl file right before you
+	% submit:
+	%
+	% http://stackoverflow.com/questions/2149854/how-to-manually-equalize-columns-
+	% in-an-ieee-paper-if-using-bibtex
+	%
+	% Or, just remove \balance and give up on balancing the last page.
+	%
+	\balance
+	
+	\bibliographystyle{acm-sigchi}
+	\bibliography{references}
+\end{document}
+
+
+
+
+
+

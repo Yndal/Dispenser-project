@@ -1,0 +1,17 @@
+\BOOKMARK [1][-]{section*.4}{Introduction}{}% 1
+\BOOKMARK [1][-]{section*.5}{Design goals}{}% 2
+\BOOKMARK [2][-]{section*.6}{User scenarios}{section*.5}% 3
+\BOOKMARK [2][-]{section*.7}{Goals}{section*.5}% 4
+\BOOKMARK [1][-]{section*.8}{Mechanical design}{}% 5
+\BOOKMARK [2][-]{section*.9}{Gripping functionality}{section*.8}% 6
+\BOOKMARK [2][-]{section*.10}{Layer detection}{section*.8}% 7
+\BOOKMARK [2][-]{section*.11}{Dish containers}{section*.8}% 8
+\BOOKMARK [2][-]{section*.12}{Misc. design decisions}{section*.8}% 9
+\BOOKMARK [1][-]{section*.13}{Software design}{}% 10
+\BOOKMARK [1][-]{section*.14}{Testing}{}% 11
+\BOOKMARK [2][-]{section*.15}{Mechanical precision}{section*.14}% 12
+\BOOKMARK [2][-]{section*.16}{Software testing}{section*.14}% 13
+\BOOKMARK [2][-]{section*.17}{Integrated experiment}{section*.14}% 14
+\BOOKMARK [1][-]{section*.18}{Discussion}{}% 15
+\BOOKMARK [1][-]{section*.19}{Conclusion}{}% 16
+\BOOKMARK [1][-]{section*.20}{Acknowledgements}{}% 17
