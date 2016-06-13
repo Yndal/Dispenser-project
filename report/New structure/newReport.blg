@@ -1,0 +1,24 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: newReport.aux
+The style file: plain.bst
+Database file #1: references.bib
+Repeated entry---line 133 of file references.bib
+ : @misc{solidworks_webpage
+ :                         ,
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in tecan_webpage
+Warning--to sort, need author or key in solidworks_webpage
+Warning--to sort, need author or key in github_dispenserProject
+Warning--to sort, need author or key in retisoftDnaSnp_webpage
+Warning--to sort, need author or key in retisoftFlex_webpage
+Warning--to sort, need author or key in labcyte_webpage
+Warning--to sort, need author or key in ttpLabtech_webpage
+Warning--to sort, need author or key in hudsonRobotics_webpage
+Warning--to sort, need author or key in agilentTechnologies-benchBotRobot_webpage
+Warning--to sort, need author or key in agilentTechnologies-directDriveRobot_webpage
+Warning--to sort, need author or key in festo_webpage
+Warning--to sort, need author or key in neotecBio-automation_webpage
+Warning--to sort, need author or key in neotecBio-robotics_webpage
+Warning--to sort, need author or key in jelCorporation_webpage
+Warning--to sort, need author or key in scirobotics_webpage
+Warning--to sort, need author or key in accelStepperLibrary_webpage
+(There was 1 error message)

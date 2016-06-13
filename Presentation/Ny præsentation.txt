@@ -1,0 +1,25 @@
+Ny præsentation
+
+
+
+
+
+	Hvad har jeg lavet
+		i forhold til andre maskiner
+		Hvordan
+
+		Kan nemt udvides: Vise screnshot af Motion-array
+
+	Mangler
+		Test af præcision
+		At holde om "wells" er ikke fuldstændig løst:
+			Søge imod løsning med halvcirkel, men hvor den er *meget* løs
+
+
+	Fremtidige aspekter
+		Addresserer manglerne
+		Ændre lidt på designet for at bruge færre ressourcer
+			Center-del, med 2 bomme istedet for 4 i hvert hjørne
+		Bedre centralisering af wells i holder
+
+

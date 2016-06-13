@@ -3,15 +3,31 @@
 \BOOKMARK [2][-]{section*.6}{User scenarios}{section*.5}% 3
 \BOOKMARK [2][-]{section*.7}{Goals}{section*.5}% 4
 \BOOKMARK [1][-]{section*.8}{Mechanical design}{}% 5
-\BOOKMARK [2][-]{section*.9}{Gripping functionality}{section*.8}% 6
-\BOOKMARK [2][-]{section*.10}{Layer detection}{section*.8}% 7
-\BOOKMARK [2][-]{section*.11}{Dish containers}{section*.8}% 8
-\BOOKMARK [2][-]{section*.12}{Misc. design decisions}{section*.8}% 9
-\BOOKMARK [1][-]{section*.13}{Software design}{}% 10
-\BOOKMARK [1][-]{section*.14}{Testing}{}% 11
-\BOOKMARK [2][-]{section*.15}{Mechanical precision}{section*.14}% 12
-\BOOKMARK [2][-]{section*.16}{Software testing}{section*.14}% 13
-\BOOKMARK [2][-]{section*.17}{Integrated experiment}{section*.14}% 14
-\BOOKMARK [1][-]{section*.18}{Discussion}{}% 15
-\BOOKMARK [1][-]{section*.19}{Conclusion}{}% 16
-\BOOKMARK [1][-]{section*.20}{Acknowledgements}{}% 17
+\BOOKMARK [2][-]{section*.9}{Initial design}{section*.8}% 6
+\BOOKMARK [3][-]{section*.10}{Gripping functionality}{section*.9}% 7
+\BOOKMARK [3][-]{section*.11}{Layer detection}{section*.9}% 8
+\BOOKMARK [3][-]{section*.12}{Dish containers}{section*.9}% 9
+\BOOKMARK [3][-]{section*.13}{Misc. design decisions}{section*.9}% 10
+\BOOKMARK [2][-]{section*.14}{1. iteration}{section*.8}% 11
+\BOOKMARK [3][-]{section*.15}{Gripping functionality}{section*.14}% 12
+\BOOKMARK [3][-]{section*.16}{Layer detection}{section*.14}% 13
+\BOOKMARK [3][-]{section*.17}{Dish containers}{section*.14}% 14
+\BOOKMARK [3][-]{section*.18}{Misc. design decisions}{section*.14}% 15
+\BOOKMARK [2][-]{section*.19}{2. iteration}{section*.8}% 16
+\BOOKMARK [3][-]{section*.20}{Gripping functionality}{section*.19}% 17
+\BOOKMARK [3][-]{section*.21}{Layer detection}{section*.19}% 18
+\BOOKMARK [3][-]{section*.22}{Dish containers}{section*.19}% 19
+\BOOKMARK [3][-]{section*.23}{Misc. design decisions}{section*.19}% 20
+\BOOKMARK [2][-]{section*.24}{Final result}{section*.8}% 21
+\BOOKMARK [3][-]{section*.25}{Gripping functionality}{section*.24}% 22
+\BOOKMARK [3][-]{section*.26}{Layer detection}{section*.24}% 23
+\BOOKMARK [3][-]{section*.27}{Dish containers}{section*.24}% 24
+\BOOKMARK [3][-]{section*.28}{Misc. design decisions}{section*.24}% 25
+\BOOKMARK [1][-]{section*.29}{Software design}{}% 26
+\BOOKMARK [1][-]{section*.30}{Testing}{}% 27
+\BOOKMARK [2][-]{section*.31}{Mechanical precision}{section*.30}% 28
+\BOOKMARK [2][-]{section*.32}{Software testing}{section*.30}% 29
+\BOOKMARK [2][-]{section*.33}{Integrated experiment}{section*.30}% 30
+\BOOKMARK [1][-]{section*.34}{Discussion}{}% 31
+\BOOKMARK [1][-]{section*.35}{Conclusion}{}% 32
+\BOOKMARK [1][-]{section*.36}{Acknowledgements}{}% 33

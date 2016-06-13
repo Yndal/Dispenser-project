@@ -1,0 +1,42 @@
+Dispenser project next semester
+
+
+- The scope
+	Requests to the APIs
+	Requests to the design
+
+- What to hand in
+	Format
+	Size
+	Date? (17. maj 2016)
+
+
+	(10 page research article?)
+
+- Project description (for SAP)
+	Just some bullet points for me to write the description upon.
+
+- Anything else? :)
+
+
+
+
+
+
+****************
+
+Kasper: 25%
+Andres: 75%
+
+Novelty
+	
+
+
+
+
+Slas2016
+
+Look into Related Work before setting the format
+
+
+Go for dispenser that can handle different sizes at once

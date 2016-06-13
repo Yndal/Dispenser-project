@@ -1,0 +1,16 @@
+DEMO
+
+Pre-calibrate
+
+Define insertion point
+
+Insert stack with dishes
+
+Dispense from stack
+
+
+
+
+
+Note tht lid parking point is 0,0,0
+

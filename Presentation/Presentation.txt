@@ -1,0 +1,28 @@
+Fremlæggelse af dispenser projekt (30 min)
+
+	Ikke meget forskning i det, da maskinerne blot er udviklet når behovet har været der.
+	
+	Nuværende løsninger
+		
+	Mangler på nuvræende løsninger
+	
+	Mit projekt
+		Lavet ud fra Design Goals
+		Konkrete "Goals"
+		
+	End results
+		How is it designed
+		Mention Teensy vs MEga and RAMPS
+			Pinouts and speed
+			Potential for creating a compact future PCB design
+	
+	
+		Which goals are fulfilled
+			How/Why not
+	
+	
+	
+	
+	
+	
+	

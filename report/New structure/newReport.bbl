@@ -1,0 +1,77 @@
+\begin{thebibliography}{10}
+
+\bibitem{accelStepperLibrary_webpage}
+{AccelStepper library}.
+\newblock \small{\url{http://www.airspayce.com/mikem/arduino/AccelStepper/}}.
+
+\bibitem{agilentTechnologies-benchBotRobot_webpage}
+{Agilent Technolgies - BenchBot Robot}.
+\newblock
+  \small{\url{http://www.agilent.com/en-us/products/automation-solutions/microplate-management-robotics/benchbot-robot}}.
+
+\bibitem{agilentTechnologies-directDriveRobot_webpage}
+{Agilent Technolgies - Direct Drive Robot}.
+\newblock
+  \small{\url{http://www.agilent.com/en-us/products/automation-solutions/microplate-management-robotics/direct-drive-robot}}.
+
+\bibitem{festo_webpage}
+{Festo}.
+\newblock \small{\url{https://www.festo.com/cat/da_dk/products}}.
+
+\bibitem{hudsonRobotics_webpage}
+{Hudson Robotics, Inc.}
+\newblock \small{\url{http://hudsonrobotics.com/products/microplate-handling}}.
+
+\bibitem{jelCorporation_webpage}
+{JEL Corporation}.
+\newblock \small{\url{http://www.jel-robot.com/products/PETRI.html}}.
+
+\bibitem{labcyte_webpage}
+{Labcyte}.
+\newblock
+  \small{\url{http://www.labcyte.com/products/automation/labcyte-automation}}.
+
+\bibitem{neotecBio-automation_webpage}
+{Neotec Bio - Automation}.
+\newblock \small{\url{http://neotec.co.il/automation/}}.
+
+\bibitem{neotecBio-robotics_webpage}
+{Neotec Bio - Robotics}.
+\newblock \small{\url{http://neotec.co.il/robotics/}}.
+
+\bibitem{github_dispenserProject}
+{Project source code at GitHub}.
+\newblock \small{\url{https://github.com/Yndal/Dispenser-project}}.
+
+\bibitem{retisoftDnaSnp_webpage}
+{Retisoft Inc. - Flex}.
+\newblock \small{\url{http://www.retisoft.ca/solutions/dna-snp.php}}.
+
+\bibitem{retisoftFlex_webpage}
+{Retisoft Inc. - Flex}.
+\newblock \small{\url{http://www.retisoft.ca/hardware/flex.php}}.
+
+\bibitem{scirobotics_webpage}
+{SciRobotics Ltd.}
+\newblock \small{\url{http://www.scirobotics.com/solutions/petrilab}}.
+
+\bibitem{solidworks_webpage}
+{SolidWorks}.
+\newblock \small{\url{http://www.solidworks.com/}}.
+
+\bibitem{tecan_webpage}
+{Tecan}.
+\newblock
+  \small{\url{http://lifesciences.tecan.com/products/liquid_handling_and_robotics}}.
+
+\bibitem{ttpLabtech_webpage}
+{TTP Labtech}.
+\newblock \small{\url{http://ttplabtech.com/liquid-handling/}}.
+
+\bibitem{petrijet_ding2015jala}
+Xianting Ding.
+\newblock Jala special issue new developments in biosensing technologies -
+  petrijet.
+\newblock {\em Journal of laboratory automation}, 20(4):311--315, 2015.
+
+\end{thebibliography}

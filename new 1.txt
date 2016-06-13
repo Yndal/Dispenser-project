@@ -1,0 +1,54 @@
+- rykke baggerste ben på plate container 23 mm op, så PCB nemt kan tilgåes.
+- printe support til lead screws
+- plate container skal have support af skålene i alle fire hjørner.
+- add hall effect sensor to horizontal parts
+- add parallax sensor to top of dish containers.
+- separate the top from the container (and make holes for screws)
+- ændre hjørnerne i "container frame" så de kan låses til resten af modulet
+
+
+- add command "g<x>,<y>,<z>,<a>" to the firmware
+- add command "i<x>,<y>,<z>" to the firmware
+	
+- Tilføje 220 uf til dist sensors!!
+
+- Back-top of dish stack is not holding on to anything
+
+
+
+- Define x, y and z directions in code!!!
+
+How to handle lids
+
+
+
+
+
+/********************/
+
+SKÅLE
+//Indsæt låg
+Gå hen til top af stak (container)
+Gå ned til Petri skål
+Gå hen til top af stak (container)
+Gå hen til lidParking
+
+//Indsæt bund
+Gå hen til top af stak (container)
+Gå ned til Petri skål
+Gå hen til top af stak (container)
+Gå hen til insertionPoint
+Gå hen til lidParking
+Gå hen til insertionPoint
+
+
+
+Brønde
+Gå hen til top af stak (container)
+Gå ned til brønde
+Gå hen til top af stak (container)
+Gå hen til insertionPoint
+
+
+
+

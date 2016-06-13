@@ -93,8 +93,7 @@
 		
 		diskutere dem ud 
 		fra kriterier som performance, kompleksistet/pris, vedligehold, udvidbarhed,
-		osv. Derefter vender du rundt og kigger på hvad for en type applikation 
-		du kigger på og ser derefter hvad for en type der så passer bedst.
+		osv. Derefter vende rundt og kigge på hvad for en type applikation vi kigger på og ser derefter hvad for en type der så passer bedst.
 		
 		Hvis der ikke i litteraturen findes eksempler på alle mulige typer er det
 		ikke et problem snarere er det godt fordi der kunne være et hul der
@@ -127,7 +126,7 @@
 %		letter-number combination will need to be entered.}
 	
 	\section{Introduction}
-	A lot of public and private institutions are working with laboratory platform to perform experiments in Petri dishes or wells. These experiments are often related to human health or other biological research, while each series of these experiments can be performed in a single type of dish. This has entailed that the available laboratory platforms mainly focus on to servo \textit{one} type of dishes and that the platforms are designed for a single type of experiments. 
+	A lot of public and private institutions are working with laboratory platform to perform experiments in Petri dishes or wells. These experiments are often related to human health or other biological research, while each series of these experiments can be performed in a single type of dish. This has entailed that the available laboratory platforms mainly focus on to serve \textit{one} type of dishes and that the platforms are designed for a single type of experiments. 
 	
 	In the design process, the knowledge of having to address just a certain type of experiments, makes it more rigid, what such a platform requires of equipment. Therefore each platform are very often designed in a non-modular way as each piece of equipment seeks to address as many functionalities as possible.
 	
@@ -227,71 +226,185 @@
 	
 	
 	\section{Mechanical design}
+	
+	\todo{Why did I choose to use Teensy and not an ATMega with the RAMPS 1.4 => AccelStep-library needs to be called often (argue in this direction)}
 	As the proposed module shall be available to the largest amount of people, the design is based on open-source and non-specialized parts\footnote{The open-source parts are available around the world, but can be watched at \url{www.openbuildspartstore.com} and \url{www.pjrc.com/teensy}, which include the blueprints.}. The choice of using open-source parts is too allow the user to either produce them by himself or acquire them elsewhere for a low cost. 
 	
-	To provide the reader with a better overview, the rest of this section will be divided into smaller sections, that each will describe one main part of the design, i.e. layer detection, the gripper and the dish containers. This description will include an iterative approach of improving each part. At the end, will be mentioned misc. small, but important design decisions.
+	The section will continue in an iterative way, starting by describing the initial thoughts toward the first prototype and the design choices, emphasizing key features like \textit{gripper functionality}, \textit{layer detection} and \textit{dish containers}. At each iteration of the prototype will be evaluated at its key features and on an overall scale.
 	
+	All of the mechanical design is created using SolidWorks\todo{reference} and can be found at GitHub\todo{Reference} along with the developed software, etc.
 	
-	
-	TBD
-	
-	Lægge vægt på at det er "normale" motorer
-	Reference til GitHub
-	
-	
-	Overvejelser  omkring fingre: 
-		2 * 2: Udligne forskel ved greb
-			Virker ikke da skæve brønde, kan bebeholde vinkel
-		
-		Istedet fikserede greb: 3 stk
-			
+	\todo{Lægge vægt på at der er brugt "normale" motorer}			
 			
 	
+	\subsection{Initial design}
+	\subsubsection{Gripping functionality}	
+	The gripping functionality of this proposal is one of the primary functions and a severe amount of prior research has gone into this. Unfortunately, there is not much public available research in this area, for which reason, inspirational thoughts have come from industrial developed and proved designs\todo{references}.
 	
-	\subsection{Gripping functionality}
-	current product from industrial providers have gone for a squeezing approach
-	Considered to add a small base to each dish as this would provide a distance between each dish, where a fork-shaped figure could go in an lift the base + dish. 
-		Rejected the idea because of the extra use of materials and the base would either had to be glued together (cut two pieces and glue these together to have a hole in the lower part which is a bit smaller than the dish) or when cutting the parts, the area could be engraved heavily to remove the upper half of the base
+	Many of the robots are designed to grip a Petri dish, plate of wells or test tubes by simply squeezing two (often metal) arms from each side of the target.
 	
-	Detecting the distance to respectively the dishes, layers and platform (refer to other sections): 
-		Using US sensor
-			No physical contact (good!!)
-		IR sensor with filter 
-			Risk of getting to close (dishes/plates are often made of \textit{transparent} glass/plastic)
-		Lever switch
-			Physical contact for sure
-			
-		The detection of the different object should be done as close to the dispenser module, but with enough distance so the  module itself won't be in risk of adding false measurements.		
+	Those handling well plates\todo{references} have a flat side toward the plate and often have one or two edges/tips at the end. These allow the manipulator to get a hold of, i.e. the bottom of the plate without touching a potential lid, or support the lift with a good hold from the bottom instead of relying on a friction-based grip, that requires additional force added to the sides of the plate. 
 	
+	The one handling Petri dishes is very similar to the one for well plates, but the "edges" at the end of the arms are a bit concave to have more than two points where the dish is gripped\footnote{If the grip of a Petri dish only has two points, there is a high risk of the dish tipping or even get dropped during the lift and repositioning.}. Some designs have addressed the two-point-issue by adding two vertical plastic cylinders at the bottom of each arm to center the dish while performing the squeeze mechanism. The outer part of the arm, are in some of these cases a bit flexible to help the centering even better, but mainly the end of the arms were fixed.
 	
+	The manipulators for test tubes reminds of those for Petri dishes, but the form factor was smaller and the arms were all vertically. The end or the arms were also shaped to fit the used test tubes - when closed, the arms would almost be in contact with the test tube all the way around.
 	
-		To create enough friction between the gripper and the dish, ideas of two semi-flexible U shaped figured was consider, but rejected as these might lift i.e. a plate of wells in an angled position - see figure xxx (provide a figure for this).
-		
-		Another idea was to have a total of three "fingers", but where all of these were fixed, and therefore move the dish into a correct centered position before starting the lift. (See figure xxx)
-		
-		
-		
-		As an initial test the gripper will be designed to carry several of the mentioned measuring equipments even though their functionality will address some of the same issues. In later iterations these least successful will be removed.
-		
+	One of the end manipulators, which actually \textit{was} from the research world, was PetriJet \todo{reference}. This machine is capable of moving a Petri dish from one stack, to a camera for analysis and on to another stack. The PetriJet uses a suction cup for moving the dishes, which implies that Petri dishes with lids locked were used. The same goes for some of the industrial developed manipulators \todo{reference}, which are used for test tubes, as these were lifted by the rubbery center of the cap. The proposed system should be able to not only handle dishes and plates with lids, but also without lids - therefore a suction cup can't be used.
 	
-	\subsection{Layer detection}
-		Endstop which can move up and down => layer is at center/top of the "active" period
-		
-		UltraSonic sensor at end of gripper (could be used for detecting dishes too)
-		
-		Hall sensor => same principal, but layer is where the value is the highest
-			(Can be mounted at the inside of the plastic at the nearest horizontal layer)
+	Among the found liquid handling robots only a single had the capability to change manipulator end at run-time\todo{reference}. The \todo{xxx} was used to not only handle well plates, but also test tubes at the same time, which required the dynamically change of tool for the end manipulator.
 	
-			
-			
-	\subsection{Dish containers}	
+	\todo{Add figure in this section, showing some of the end manipulators?}
+	
+	A few of the industrial solutions had designed a small squared plate, where a Petri dish was placed. This prevented the end manipulator from actually grip the dish as a simple fork-inspired design could slide in between two plates, separated by a Petri dish, and lift up the top plate and a the Petri dish placed on top of it. \todo{Picture?}\\
+	Such an approach opens op the opportunity to mark each squared plate with a barcode or similar. A picture taken from an experiment could then include this barcode as reference.
+	
+	To save material and avoid stacks of Petri dishes, that will slide out of position, the squared plate is rejected for now, but noted as a potential solution to forthcoming issues.
+		
+	Based on the aforementioned background research, the initial design of the gripper will be based on two arms, that respectively will have one and two points of contact with the dish/plate. The end of the arms will be fixed to ensure that, i.e. a misaligned well plate will be correct aligned while the grip is achieved. The reason for having a total of three and not four points of contact is to minimize complexity. Some high-friction material will be added at the contact points to give a better grip.
+	
+	During the initial design several sensors will be mounted at the tip of the end manipulator. These sensors are of different types, but addresses some of the same issues. Please see \nameref{subsub:Initial_LayerDetection} for details about this.
+
+
+	\subsubsection{Layer detection}\label{subsub:Initial_LayerDetection}
+	Layers, in the proposed system, is to be understood as, i.e. the platform where all experiments are conducted or the layers of tools above/below the platform layer. A layer is static in terms of height but tools and other equipment in the layer can freely be moved around.
+	
+	Detecting the layers in the proposed module, is to increase the user experience as this otherwise could be done manually and entered in the system of the original laboratory platform. In this way, the proposed module can also be used together with laboratory platforms, where such layers can be adjusted dynamically and complement this by telling the new heights - if the platform itself is not capable of this already.
+	
+	Amongst the found research projects and industrial robots, none had addressed this issue before. Thoughts go towards, that often the layers are permanently mounted or simply not existing, for which reason it hasn't been seen as a problem. With the constant development of this technology and only more dynamic solutions will be designed, this will still be considered as an important design feature - in this way, the proposed module can also be matched with future laboratory platforms.
+	
+	As the detection of layers are to be implemented, it might well be used to detect height of dishes/plates in a stack (see \nameref{subsubsec:Initial_DishContainers}). To detect these heights, several solutions will be implemented in the gripper for the initial design. This is to compress the overall process and test multiple solutions at once. The sensors are all standard sensors and of the following types
+	
+	\begin{itemize}
+	\item \textbf{Ultrasound sensors}\footnote{\todo{Add part details}} Ideal for this scenario as physical contact is avoided, the cost is low and precision is high. Two ultrasound (US) are tested, which both has a narrow beam to prevent false distances.
+	\item \textbf{IR sensor}\footnote{\todo{Add part details}} This IR will also avoid physical contact, but distances are much closer compared to an US sensor. This particular one has a high-end, build-in noise filter.
+	\item \textbf{Level switch}\footnote{\todo{Add part details}} Widely used switch also known as endstop. Requires physical contact, which can be an issue when detecting height of clean dish/plate stacks, but very low cost and reliable.
+	\item \textbf{Hall effect sensors}\footnote{\todo{Add part details}} Requires a magnetic element as the target to be detected, which will be an issue when detecting the height of dishes/plates, but low cost, commonly used and no directly physical contact. Two types of hall effect sensors are tested: Switch and linear ratiometric
+	\end{itemize}
+		
+				
+	\subsubsection{Dish containers}\label{subsubsec:Initial_DishContainers}
+	Make introducing note about it is not one container that will fit it all!
 		Room for electronics in the bottom (and protected from liquids from above)
 		Angled side + angled cuts to help align dishes that are removed from the platform
 		Distance sensors on the top
+		
+		Starte med modstand der er klistret på i bunden af stakken
+			But room for electronics in the bottom!!
+			
+		Note how the front is symmetrical: During the initial design is was experiences that the plastic material (POM) could be bent. Depending of the severity of this, the front plate can just be flipped, but be careful, that there is room enough for inserting a dish/wells to the stack.
+		Nævne skrå front og skæve sider på stak (siderne gør mere end de ser ud til, da de er tættere på centrum en skålens sider)
+			
+		
+		Initial design of the wells container had been designed in a way to minimize the amount of resources. This design *should* be fairly good, but otherwise a design with support in each corner is searched for.
 	
 	
-	\subsection{Misc. design decisions}
+	\subsubsection{Misc. design decisions}
+		Blev løbende klogere under byggeprocessen:
+			Mindske huller i POM og bruge POM'en som modpart til skruer
+			Fødder
+			Lead screws rammer på ramme når de kører hurtigt
 	
+	
+	\subsection{1. iteration}
+	asdf
+		\subsubsection{Gripping functionality}
+			Consider to use a screw with two threadings
+			Using too much vertical space:
+				change the double alu profile to a single and add corners to prevent it from rotating
+		
+			Thoughts about two rails for each arm
+			
+		Arme: Lave yderste huller mindste => vende skruer om og tilføje noget klistret. Så skulle de kunne løfte den inderste skål uden at fjerne toppen først.
+		
+		\subsubsection{Layer detection}
+		adsf
+				
+		\subsubsection{Dish containers}	
+		Considering to rotate the sides by 45 degrees to have a design like
+		
+		/   \
+		\   /
+		
+			This would ease the gripping and measuring operations as there would be more space. But the use of 2D laser cutting limits the design of "complex" structures.
+			
+			
+		Is the front alu profiel needed? If not (and I think not!!) then the disc containers could get even closer to the rest of the module.
+		
+		
+		Consider to move the alu profiles at the sides into the middle
+			This should be duable by defining the distance in the stack-platform
+		
+		
+		Meget smalt område der kan klemmes om når en runde skål skal samles op. Den bør måske gøres bredere (husk at tage højde for stakkens side så)
+		
+		Ide omkring front: kunne fjernes pga at top forhindre nem adgang til skåle. Vil hellere fjerne top, da slid ellers ville gøre fronten ustabil (kune bruge magneter, men de ville besværliggøre bygningsprocessen)
+		
+		På stak: forreste alubar kan skydes længere tilbage og gøre plads til en støtte-profil istedet
+		
+		Moving the alu profile close to each other to save space and allow for more containers in the row.
+		
+		
+		
+		Test results:
+		
+			MB1000: US device needs too long time from transmitting a signal to it can receive a signal. Therefore the US device returned the same distance  from around the top of the sides to the bottom.
+			IF (!!) this device is to be used, one could remove the top and simply go higher. This would increase the total high of the module with approximately 30 cm and is therefore rejected
+			
+			Parallax PING))): Worked very well, but needed to be placed rather precise when measuring from the top of the sides or farther away. 
+			Was able to measure down to 1 inch and with a stable output.
+			Unfortunately the sensor is big to have mounted on of the gripper arms.
+			
+			MB1202
+			
+			VL6180X
+			
+			Other IR device from sparkfun
+			
+			Level switch
+			
+			Hall-effect sensors
+			
+		Increased distance from top of sides to the actual top of the containter. This is to give more space for the US sensor and because the arms may drop a bit when weight is added.
+			
+		
+		\subsubsection{Misc. design decisions}
+		Letting the vertical axis rest on the motor mounts as the lead screw are too steep to hold the vertical axis (plus the rest) by itself.
+		The concern about the steep lead screw must be discussed - and addressed!
+		
+		
+		Let the motor module fit several sizes of Nema motors by creating cuttings instead of holes for the screws
+		
+		Switched the double alu profile for a single alu profile. This increases the stability in the weak, vertical direction and makes the overall size of the "horizontal design" 40mm smaller in the horizontal direction
+		
+	\subsection{2. iteration}
+		asdf
+			\subsubsection{Gripping functionality}
+			asdf
+			
+			\subsubsection{Layer detection}
+			adsf
+					
+			\subsubsection{Dish containers}	
+			asdf
+			
+			\subsubsection{Misc. design decisions}
+			ASDF
+			
+	\subsection{Final result}
+			Future aspect: Look into wiring and electrical interference!
+			\subsubsection{Gripping functionality}
+			asdf
+			
+			\subsubsection{Layer detection}
+			adsf
+					
+			\subsubsection{Dish containers}	
+			asdf
+			
+			\subsubsection{Misc. design decisions}
+			ASDF
+			
+			
 	\section{Software design}
 	TBD
 	
@@ -341,6 +454,7 @@
 	\end{center}
 	\caption{Available commands and descriptions.} \label{table:commands}
 	\end{table}	
+	\todo{Add commands like: goto(x,y,z,g)}
 
 	\section{Testing}
 	\subsection{Mechanical precision}
@@ -351,12 +465,17 @@
 	\subsection{Software testing}
 	Different Teensies compared to amount of incoming data?
 	
+	
+	
 	\subsection{Integrated experiment}
 	TBD
 	
 	\section{Discussion}
 	TBD
 	Skal være en mere konceptuel diskussion (relatere til design goals)
+	
+	
+	Make absolutely sure that your supplier can deliver within a few days - otherwise have a small stash yourself!! This can avoid a setback of approximately a month.
 	
 	\section{Conclusion}
 	It is important that you write for the SIGCHI audience.  Please read
@@ -371,9 +490,10 @@
 	successful, both in being accepted into the Conference, and in
 	influencing the work of our field.
 	
+	\todo{For electrical schematics contact the author.}
+	
 	\section{Acknowledgements}
 	The author would like to thank primarily Kasper Støy and Andrés Faina for supervising this project, but also PITLab for providing temporarily sensors.
-	%Jørn?
 	
 	
 	% Balancing columns in a ref list is a bit of a pain because you

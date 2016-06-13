@@ -1,0 +1,8 @@
+Tilføjelser til præsentation
+	Teensy vs MEga => 
+		No reset, when connecting
+		Faster processor
+		Cheaper
+		Smaller
+	Future aspects
+		Save calibration data to avoid re-calibration!!
